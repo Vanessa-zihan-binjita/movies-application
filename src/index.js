@@ -19,7 +19,7 @@ getMovies().then((movies) => {
 $('#movieList').html('')
   movies.forEach(({title, rating, id}) => {
     $('#movieList').append(
-    `<ul><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
+    `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
     )
   });
 }).catch((error) => {

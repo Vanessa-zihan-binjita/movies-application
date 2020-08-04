@@ -27,3 +27,17 @@ fetch(url, options)
     });
 })
 
+$('#movieList').children('li').dblclick(function () {
+  $(this).css({
+    backgroundColor: yellow
+  });
+})
+// mydoc = {
+//   "baz": "qux",
+//   "rating": "bar"
+// };
+// thepatch = [
+//   { "op": "replace", "path": "/baz", "value": "boo" }
+// ]
+// patcheddoc = jsonpatch.apply_patch(mydoc, thepatch);
+// patcheddoc now equals {"baz": "boo", "foo": "bar"}}
