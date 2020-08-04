@@ -1,3 +1,7 @@
+$(window).load(function() {
+  $('#loading').hide();
+});
+
 /**
  * es6 modules and imports
  */
