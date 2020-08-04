@@ -22,8 +22,17 @@ $('#movieList').html('')
     `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
     )
   });
+
+$('#editMovieName').keypress(function () {
+  // if (('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
+  // //
+  // // }
+  console.log($('#editMovieName').val().toLowerCase())
+})
+
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.')
   console.log(error);
 });
+
 

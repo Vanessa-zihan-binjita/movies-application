@@ -27,11 +27,7 @@ fetch(url, options)
     });
 })
 
-$('#movieList').children('li').dblclick(function () {
-  $(this).css({
-    backgroundColor: yellow
-  });
-})
+
 // mydoc = {
 //   "baz": "qux",
 //   "rating": "bar"
