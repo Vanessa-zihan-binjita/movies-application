@@ -5,7 +5,6 @@ module.exports = {
   }
 };
 
-
 const url = '/api/movies';
 
 $("#btn1").click(function(){
@@ -28,22 +27,21 @@ fetch(url, options)
     });
 })
 //second submit button
+var currentMovies = [];
 $("#btn2").click(function(){
   let editMovie = {};
   editMovie.title = $("#changeMovieName").val();
   editMovie.rating = $('#ratingID2').val();
   console.log(editMovie)
-  editMovie = {
-    "title",
-    "rating"
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(editMovie),
   };
-  thepatch = [
-    { "op":"replace", "path": "/title", "value": $("#changeMovieName").val() }
-  ]
-  patcheddoc = jsonpatch.apply_patch(myd, thepatch);
-  patcheddoc now equals {"baz": "boo", "foo": "bar"}}
 
-  fetch(url, options)
+  fetch(url+"/" + $("#changeMovieName"), options)
       .then(/* post was created successfully */)
       .catch(function (error) {
         console.log(error)
