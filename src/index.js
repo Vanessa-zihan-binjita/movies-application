@@ -27,10 +27,9 @@ function refreshMovie() {
     <p class="card-text">id#${id}</p>
     <p class="card-text">rating: ${rating}</p>
     <a href="#" class="btn btn-primary edit" data-id="${id}">Edit</a>
-    <a href="#" class="btn btn-primary delete">Delete</a>
+    <a href="#" class="btn btn-primary delete" data-id="${id}">Delete</a>
     </div>
     </div>`
-                // `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
             )
         });
         $('.edit').click(function () {
@@ -41,6 +40,13 @@ function refreshMovie() {
              $("#editID").val(movie.id);
           })
         })
+      $('.delete').click(function () {
+        let id = $(this).attr('data-id')
+        deleteMovie(id).then((movie) => {
+         console.log(movie)
+          refreshMovie();
+        })
+      })
     });
 }
   refreshMovie();
