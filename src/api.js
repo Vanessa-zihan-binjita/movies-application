@@ -1,4 +1,8 @@
 module.exports = {
+  getMovie: (id) => {
+    return fetch('/api/movies/'+id)
+        .then(response => response.json());
+},
   getMovies: () => {
     return fetch('/api/movies')
       .then(response => response.json());
@@ -13,7 +17,7 @@ module.exports = {
     })
   },
   patchMovie: (movie, id) => {
-    return fetch('api/movies', {
+    return fetch('api/movies/'+id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

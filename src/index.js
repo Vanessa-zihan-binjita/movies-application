@@ -12,7 +12,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies, postMovie, patchMovie, deleteMovie} = require('./api.js');
+const {getMovie, getMovies, postMovie, patchMovie, deleteMovie} = require('./api.js');
 
 function refreshMovie() {
     getMovies().then((movies) => {
@@ -26,13 +26,21 @@ function refreshMovie() {
         <h5 class="card-title">${title}</h5>
     <p class="card-text">id#${id}</p>
     <p class="card-text">rating: ${rating}</p>
-    <a href="#" class="btn btn-primary edit">Edit</a>
+    <a href="#" class="btn btn-primary edit" data-id="${id}">Edit</a>
     <a href="#" class="btn btn-primary delete">Delete</a>
     </div>
     </div>`
                 // `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
             )
         });
+        $('.edit').click(function () {
+          let id = $(this).attr('data-id')
+          getMovie(id).then((movie) => {
+             $('#ratingID2').val(movie.rating);
+             $("#changeMovieName").val(movie.title);
+             $("#editID").val(movie.id);
+          })
+        })
     });
 }
   refreshMovie();
@@ -47,45 +55,18 @@ $("#btn1").click(function () {
      refreshMovie();
     })
 });
-//
-// //second submit button
-// patchMovie().then((movies) => {
-//   $("#btn2").click(function(){
-//     let editMovie = {};
-//     editMovie.title = $("#changeMovieName").val();
-//     editMovie.rating = $('#ratingID2').val();
-//     console.log(editMovie)
-//     const options = {
-//       method: 'PATCH',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(editMovie),
-//     };
-//
-//     fetch(url+"/" + $("#changeMovieName"), options)
-//         .then(/* post was created successfully */)
-//         .catch(function (error) {
-//           console.log(error)
-//         });
-//   });
-// });
+
+//second submit button
+$("#btn2").click(function(){
+  let editMovie = {};
+  editMovie.title = $("#changeMovieName").val();
+  editMovie.rating = $('#ratingID2').val();
+  editMovie.id = $('#editID').val();
+  patchMovie(editMovie, editMovie.id).then((movies) => {
+    console.log(movies)
+    refreshMovie();
+  });
+});
 
 
-// })
-// $('#editMovieName').keypress(function () {
-//
-//   if ($('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
-//    if( typeof $("#changeMovieName").val() === "string" && $("#changeMovieName").val() !== ("")) {
-//      movies.title = $("#changeMovieName").val();
-//    }
-//   }
-//   console.log($('#editMovieName').val().toLowerCase())
-// })
-//
-// }).catch((error) => {
-//   alert('Oh no! Something went wrong.\nCheck the console for details.')
-//   console.log(error);
-// });
-//
-//
+
