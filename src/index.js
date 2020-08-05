@@ -11,7 +11,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies} = require('./api.js');
+const {getMovies, postMovie, patchMovie, deleteMovie} = require('./api.js');
 
 
 getMovies().then((movies) => {
@@ -23,19 +23,22 @@ $('#movieList').html('')
     )
   });
 
-$('#editMovieName').keypress(function () {
+postMovie().then((movies) => {
 
-  if ($('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
-   if( typeof $("#changeMovieName").val() === "string" && $("#changeMovieName").val() !== ("")) {
-     movies.title = $("#changeMovieName").val();
-   }
-  }
-  console.log($('#editMovieName').val().toLowerCase())
-})
-
-}).catch((error) => {
-  alert('Oh no! Something went wrong.\nCheck the console for details.')
-  console.log(error);
-});
-
-
+// })
+// $('#editMovieName').keypress(function () {
+//
+//   if ($('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
+//    if( typeof $("#changeMovieName").val() === "string" && $("#changeMovieName").val() !== ("")) {
+//      movies.title = $("#changeMovieName").val();
+//    }
+//   }
+//   console.log($('#editMovieName').val().toLowerCase())
+// })
+//
+// }).catch((error) => {
+//   alert('Oh no! Something went wrong.\nCheck the console for details.')
+//   console.log(error);
+// });
+//
+//
