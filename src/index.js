@@ -22,8 +22,31 @@ $('#movieList').html('')
     `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
     )
   });
+});
 
+const url = '/api/movies';
 postMovie().then((movies) => {
+  $("#btn1").click(function(){
+    let NewMovie = {};
+    NewMovie.title = $("#movieName").val();
+    NewMovie.rating = $('#ratingID1').val();
+    console.log(NewMovie)
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(NewMovie),
+    };
+  fetch(url, options)
+      .then(/* post was created successfully */)
+      .catch(function (error) {
+        console.log(error)
+      });
+  })
+
+});
+
 
 // })
 // $('#editMovieName').keypress(function () {

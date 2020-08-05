@@ -2,7 +2,7 @@ module.exports = {
   getMovies: () => {
     return fetch('/api/movies')
       .then(response => response.json());
-  }
+  },
   postMovie: (movie) => {
     return fetch('api/movies', {
       method: 'POST',
@@ -31,7 +31,7 @@ module.exports = {
   }
 };
 
-const url = '/api/movies';
+// const url = '/api/movies';
 //
 // $("#btn1").click(function(){
 //   let NewMovie = {};
