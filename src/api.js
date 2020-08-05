@@ -20,20 +20,33 @@ $("#btn1").click(function(){
     },
     body: JSON.stringify(NewMovie),
   };
+
 fetch(url, options)
     .then(/* post was created successfully */)
     .catch(function (error) {
       console.log(error)
     });
 })
+//second submit button
+$("#btn2").click(function(){
+  let editMovie = {};
+  editMovie.title = $("#changeMovieName").val();
+  editMovie.rating = $('#ratingID2').val();
+  console.log(editMovie)
+  editMovie = {
+    "title",
+    "rating"
+  };
+  thepatch = [
+    { "op":"replace", "path": "/title", "value": $("#changeMovieName").val() }
+  ]
+  patcheddoc = jsonpatch.apply_patch(myd, thepatch);
+  patcheddoc now equals {"baz": "boo", "foo": "bar"}}
 
+  fetch(url, options)
+      .then(/* post was created successfully */)
+      .catch(function (error) {
+        console.log(error)
+      });
+})
 
-// mydoc = {
-//   "baz": "qux",
-//   "rating": "bar"
-// };
-// thepatch = [
-//   { "op": "replace", "path": "/baz", "value": "boo" }
-// ]
-// patcheddoc = jsonpatch.apply_patch(mydoc, thepatch);
-// patcheddoc now equals {"baz": "boo", "foo": "bar"}}

@@ -24,9 +24,12 @@ $('#movieList').html('')
   });
 
 $('#editMovieName').keypress(function () {
-  // if (('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
-  // //
-  // // }
+
+  if ($('#editMovieName').val().toLowerCase() === movies.title.toLowerCase()) {
+   if( typeof $("#changeMovieName").val() === "string" && $("#changeMovieName").val() !== ("")) {
+     movies.title = $("#changeMovieName").val();
+   }
+  }
   console.log($('#editMovieName').val().toLowerCase())
 })
 
