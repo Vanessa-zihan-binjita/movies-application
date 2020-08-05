@@ -19,7 +19,17 @@ getMovies().then((movies) => {
 $('#movieList').html('')
   movies.forEach(({title, rating, id}) => {
     $('#movieList').append(
-    `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
+    `<div class="card" style="width: 18rem;">
+<!--        <img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+        <h5 class="card-title">${title}</h5>
+    <p class="card-text">id#${id}</p>
+    <p class="card-text">rating: ${rating}</p>
+    <a href="#" class="btn btn-primary edit">Edit</a>
+    <a href="#" class="btn btn-primary delete">Delete</a>
+    </div>
+    </div>`
+    // `<ul class="movieTable"><li>id#${id}</li> <li>${title} </li> <li>rating: ${rating}</li></ul>`
     )
   });
 });
@@ -44,8 +54,30 @@ postMovie().then((movies) => {
         console.log(error)
       });
   })
-
 });
+//
+// //second submit button
+// patchMovie().then((movies) => {
+//   $("#btn2").click(function(){
+//     let editMovie = {};
+//     editMovie.title = $("#changeMovieName").val();
+//     editMovie.rating = $('#ratingID2').val();
+//     console.log(editMovie)
+//     const options = {
+//       method: 'PATCH',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(editMovie),
+//     };
+//
+//     fetch(url+"/" + $("#changeMovieName"), options)
+//         .then(/* post was created successfully */)
+//         .catch(function (error) {
+//           console.log(error)
+//         });
+//   });
+// });
 
 
 // })
