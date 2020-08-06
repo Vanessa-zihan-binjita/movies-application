@@ -9,11 +9,10 @@ import sayHello from './hello';
 
 sayHello('World');
 
-// const moviePoster = function () {
-//  $.get('http://img.omdbapi.com/?apikey=36c1feb3&', {
-//     yourkey:
-//  })
-// }
+$.get(`http://img.omdbapi.com/?apikey=36c1feb3&`).done(function(data) {
+     console.log(data)
+ })
+
 
 /**
  * require style imports

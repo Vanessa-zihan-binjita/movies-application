@@ -31,26 +31,3 @@ module.exports = {
     })
   }
 };
-
-// //second submit button
-// var currentMovies = [];
-// $("#btn2").click(function(){
-//   let editMovie = {};
-//   editMovie.title = $("#changeMovieName").val();
-//   editMovie.rating = $('#ratingID2').val();
-//   console.log(editMovie)
-//   const options = {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(editMovie),
-//   };
-//
-//   fetch(url+"/" + $("#changeMovieName"), options)
-//       .then(/* post was created successfully */)
-//       .catch(function (error) {
-//         console.log(error)
-//       });
-// })
-//
