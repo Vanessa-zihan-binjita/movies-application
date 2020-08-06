@@ -78,6 +78,7 @@ $("#btn2").click(function () {
     patchMovie(editMovie, editMovie.id).then((movies) => {
         refreshMovie();
     });
+
 });
 
 
