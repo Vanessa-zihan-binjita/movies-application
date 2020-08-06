@@ -49,7 +49,6 @@ function refreshMovie() {
                         e.preventDefault()
                         let id = $(this).attr('data-id')
                         deleteMovie(id).then((movie) => {
-                            console.log(movie)
                             refreshMovie();
                         })
                     })
@@ -60,14 +59,12 @@ function refreshMovie() {
 }
 
 refreshMovie();
-const url = '/api/movies';
 
 $("#btn1").click(function () {
     let NewMovie = {};
     NewMovie.title = $("#movieName").val();
     NewMovie.rating = $('#ratingID1').val();
     postMovie(NewMovie).then((movies) => {
-        console.log(movies);
         refreshMovie();
     })
 });
@@ -79,7 +76,6 @@ $("#btn2").click(function () {
     editMovie.rating = $('#ratingID2').val();
     editMovie.id = $('#editID').val();
     patchMovie(editMovie, editMovie.id).then((movies) => {
-        console.log(movies)
         refreshMovie();
     });
 });
