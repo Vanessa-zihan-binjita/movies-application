@@ -1,5 +1,12 @@
 html, body {
     height: 100%;
+    background-color: #9FD9CB;
+    color: white;
+}
+
+#codeupflix {
+    display: flex;
+    justify-content: center;
 }
 
 #loading {
@@ -27,17 +34,41 @@ html, body {
 }
 
 #movieList {
-    width: 78%;
+    width: 100%;
 }
 
-.container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
+.btn {
+    background-color: #FFDDE3;
+    color: #028B79;
+}
+
+.btn:hover {
+    background-color: #F9DEFF;
+    color: #028B79;
+}
+
+.card {
+    height: 50%;
+    margin: auto;
+    background-color: rgb(238,238,238);
+    color: black;
+}
+
+.card:hover{
+    background-color: #FFDDE3;
 }
 
 .card-img-top {
     height: 500px;
     width: auto;
+}
+
+.jumbotron {
+    padding: 0;
+    height: 270px;
+}
+
+.testimonial-group > .row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }

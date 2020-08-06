@@ -25,16 +25,16 @@ function refreshMovie() {
             $.get(`http://www.omdbapi.com/?apikey=${movieKey()}&t=${title}`).done(function (data) {
                 let moviePoster = data.Poster
                 $('#movieList').append(
-                    `<div class="card" style="width: 18rem;">
-        <img src="${moviePoster}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">${title}</h5>
-    <p class="card-text" hidden>id#${id}</p>
-    <p class="card-text">Rating: ${rating}</p>
-    <a href="#" class="btn btn-primary edit" data-id="${id}">Edit</a>
-    <a href="#" class="btn btn-primary delete" data-id="${id}">Delete</a>
-    </div>
-    </div>`
+                    `<div class="card rounded col-3 mx-2">
+                        <img src="${moviePoster}" class="card-img-top mt-4" alt="movie-poster">
+                        <div class="card-body">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text" hidden>id#${id}</p>
+                            <p class="card-text">Rating: ${rating}</p>
+                            <a href="#" class="btn btn-primary edit" data-id="${id}">Edit</a>
+                            <a href="#" class="btn btn-primary delete" data-id="${id}">Delete</a>
+                        </div>
+                    </div>`
                 )
                 if(idx === movies.length-1){
                     $('.edit').click(function () {
