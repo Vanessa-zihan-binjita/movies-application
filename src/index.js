@@ -9,9 +9,8 @@ import sayHello from './hello';
 
 sayHello('World');
 
-$.get(`http://img.omdbapi.com/?apikey=36c1feb3&`).done(function(data) {
-     console.log(data)
- })
+import movieKey from './keys.js';
+let moviePoster
 
 
 /**
@@ -24,9 +23,11 @@ function refreshMovie() {
         console.log('Here are all the movies:');
         $('#movieList').html('')
         movies.forEach(({title, rating, id}) => {
+$.get(`http://www.omdbapi.com/?apikey=36c1feb3&t=${title}`).done(function(data) {
+     let moviePoster = data.Poster
             $('#movieList').append(
                 `<div class="card" style="width: 18rem;">
-<!--        <img src="..." class="card-img-top" alt="...">-->
+        <img src="${moviePoster}" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${title}</h5>
     <p class="card-text">id#${id}</p>
@@ -37,6 +38,7 @@ function refreshMovie() {
     </div>`
             )
         });
+ })
         $('.edit').click(function () {
           let id = $(this).attr('data-id')
           getMovie(id).then((movie) => {
