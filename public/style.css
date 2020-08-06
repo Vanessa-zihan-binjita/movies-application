@@ -36,3 +36,8 @@ html, body {
     transform: translateY(-100%);
     text-align: center;
 }
+
+.card-img-top {
+    height: 500px;
+    width: auto;
+}

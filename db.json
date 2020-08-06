@@ -1,11 +1,6 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
-      "id": 1
-    },
-    {
       "title": "The Dark Knight",
       "rating": "5",
       "id": 2
@@ -17,8 +12,23 @@
     },
     {
       "title": "365 ",
-      "rating": "5",
+      "rating": "3",
       "id": 6
+    },
+    {
+      "title": "Clue",
+      "rating": "4",
+      "id": 7
+    },
+    {
+      "title": "The Great Gatsby",
+      "rating": "5",
+      "id": 9
+    },
+    {
+      "title": "The Princess Diaries",
+      "rating": "5",
+      "id": 10
     }
   ]
 }
