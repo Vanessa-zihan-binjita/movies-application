@@ -40,6 +40,7 @@ html, body {
 .btn {
     background-color: #FFDDE3;
     color: #028B79;
+    border: darkgray;
 }
 
 .btn:hover {
@@ -55,7 +56,7 @@ html, body {
 }
 
 .card:hover{
-    background-color: #64061E;
+    background-color: #CBB3B9;
 }
 
 .card-img-top {
