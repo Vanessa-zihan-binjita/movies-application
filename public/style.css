@@ -69,7 +69,7 @@ html, body {
     height: 270px;
 }
 
-.testimonial-group > .row {
+.movie-group > .row {
     overflow-x: auto;
     flex-wrap: nowrap;
 }
